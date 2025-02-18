@@ -1,0 +1,22 @@
+# Calculate average shot conversion rates
+avg_g_sh_brasil = brasil_serieA_df["G/Sh"].mean()
+avg_g_sh_big5 = big5_forwards_df["G/Sh"].mean()
+
+avg_g_sot_brasil = brasil_serieA_df["G/SoT"].mean()
+avg_g_sot_big5 = big5_forwards_df["G/SoT"].mean()
+
+# Bar chart comparing shot conversion rates
+fig, ax = plt.subplots(figsize=(8,5))
+bar_width = 0.35
+index = [0, 1]
+
+ax.bar(index, [avg_g_sh_brasil, avg_g_sh_big5], bar_width, label="Goals per Shot")
+ax.bar([i + bar_width for i in index], [avg_g_sot_brasil, avg_g_sot_big5], bar_width, label="Goals per Shot on Target")
+
+ax.set_xticks([i + bar_width / 2 for i in index])
+ax.set_xticklabels(["Brazil Serie A", "Big 5 Leagues"])
+ax.set_ylabel("Conversion Rate")
+ax.set_title("Shot Conversion: Brazil Serie A vs. Big 5 Leagues")
+ax.legend()
+
+plt.show()

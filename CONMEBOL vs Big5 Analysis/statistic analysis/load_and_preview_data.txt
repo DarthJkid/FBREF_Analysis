@@ -1,0 +1,8 @@
+import pandas as pd
+
+# Load the datasets
+brasil_serieA_df = pd.read_csv("/mnt/data/Fixed_Brasil_SerieA.csv")
+big5_forwards_df = pd.read_csv("/mnt/data/Big5CombinedForwards.csv")
+
+# Display the first few rows of each dataset
+brasil_serieA_df.head(), big5_forwards_df.head()

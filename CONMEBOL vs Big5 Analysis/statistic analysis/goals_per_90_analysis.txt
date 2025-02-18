@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+# Calculate the average goals per 90 for both datasets
+avg_goals_brasil = brasil_serieA_df["Gls/90"].mean()
+avg_goals_big5 = big5_forwards_df["Gls/90"].mean()
+
+# Bar chart comparing goals per 90
+plt.figure(figsize=(8,5))
+plt.bar(["Brazil Serie A", "Big 5 European Leagues"], [avg_goals_brasil, avg_goals_big5])
+plt.ylabel("Average Goals per 90 Minutes")
+plt.title("Goals per 90: Brazil Serie A vs. Big 5 Leagues")
+plt.show()
